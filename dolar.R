@@ -8,10 +8,11 @@ original <- read.csv("Consulta_20210115-212725028-truncado.csv", header = F)
 # Vemos algunos datos.
 head(original)
 
-n <- length(original$V1) 
-promedios <- numeric()
-fechas <- character()
-fechas_teorica <- character()
+n <- length(original$V1) # Cantidad original de datos. 
+promedios <- numeric() # Aquí guardaremos los promedios mensuales.
+fechas <- character() # Aquí guardaremos las fechas agregadas.
+
+# Variables antes de iniciar el ciclo que agrega los datos por mes.
 suma <- 0
 contador <- 0
 mes <- 8
@@ -28,10 +29,10 @@ for (i in 1:n) {
       year <- year + 1 
     }
     fechas <- append(fechas, paste(year, mes, sep = "-"))
-    fechas_teorica <- append(fechas_teorica, as.Date(original$V1[i],format="%d/%m/%Y"))
   }
 }
 
-nuevos_datos <- data.frame(fechas, fechas_teorica, promedios)
+nuevos_datos <- data.frame(fechas, promedios)
+head(nuevos_datos)
 series <- ts(promedios, start = c(1976,9), frequency = 12)
 plot(series)
