@@ -2,7 +2,7 @@
 
 El presente código agrega por mes los datos históricos diarios del precio del dolar desde septiembre de 1976 hasta diciembre del 2020. Los datos usados fueron descargados del <a href="https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=6&accion=consultarCuadro&idCuadro=CF373&locale=es">Sistema de Información Económica</a> el 15 de enero de 2021. Aunque los datos originales son desde el año de 1954, es hasta septiembre de 1976 que se tiene un registro real. 
 
-Como resultado se obtiene un data frame, cuyos primeros cinco renglones se muestran a continuación:
+Como resultado se obtiene un data frame, cuyos primeros renglones se muestran a continuación:
 
 ```sh
    fechas  promedios
